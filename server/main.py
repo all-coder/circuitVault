@@ -1,9 +1,7 @@
 from machine import Pin,I2C
 from time import sleep
 #these are api wrappers downloaded from github 
-from server_side.libraries.pico_i2c_lcd import I2cLcd
-from server_side.libraries.lcd_api import LcdApi
-
+from libraries import lcd_api,pico_i2c_lcd
 
 #setting up the lcd
 sda = Pin(0)
