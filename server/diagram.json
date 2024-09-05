@@ -1,0 +1,65 @@
+{ "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "wokwi-pi-pico",
+        "id": "pico",
+        "top": -195.15,
+        "left": -370.8,
+        "attrs": { "env": "micropython-20231227-v1.22.0" }
+      },
+      {
+        "type": "wokwi-membrane-keypad",
+        "id": "keypad1",
+        "top": -587.6,
+        "left": -877.6,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-lcd1602",
+        "id": "lcd1",
+        "top": -502.4,
+        "left": -397.6,
+        "attrs": { "pins": "i2c" }
+      },
+      { "type": "wokwi-relay-module", "id": "relay1", "top": -163, "left": 28.8, "attrs": {} },
+      {
+        "type": "wokwi-rgb-led",
+        "id": "rgb1",
+        "top": -332,
+        "left": -123.7,
+        "attrs": { "common": "cathode" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": -140.05,
+        "left": -259.2,
+        "attrs": { "value": "1000" }
+      }
+    ],
+    "connections": [
+      [ "lcd1:SDA", "pico:GP0", "green", [ "h-19.2", "v-67", "h-115.2", "v38.4" ] ],
+      [ "lcd1:SCL", "pico:GP1", "green", [ "h-28.8", "v-86.1", "h-115.2", "v57.6" ] ],
+      [ "pico:GP9", "keypad1:R1", "green", [ "h0" ] ],
+      [ "keypad1:R2", "pico:GP8", "green", [ "v0" ] ],
+      [ "pico:GP7", "keypad1:R3", "green", [ "h0" ] ],
+      [ "keypad1:R4", "pico:GP6", "green", [ "v0" ] ],
+      [ "pico:GP5", "keypad1:C1", "green", [ "h0" ] ],
+      [ "keypad1:C2", "pico:GP4", "green", [ "v0" ] ],
+      [ "pico:GP3", "keypad1:C3", "green", [ "h0" ] ],
+      [ "pico:GP2", "keypad1:C4", "green", [ "h0" ] ],
+      [ "lcd1:GND", "pico:GND.8", "black", [ "h-57.6", "v201.6", "h144", "v28.8" ] ],
+      [ "lcd1:VCC", "pico:VBUS", "red", [ "h-86.4", "v211.3", "h134.4", "v19.2" ] ],
+      [ "relay1:VCC", "pico:3V3_EN", "red", [ "h-28.8", "v19.2" ] ],
+      [ "pico:GP27", "rgb1:G", "green", [ "h0" ] ],
+      [ "pico:GP28", "rgb1:R", "green", [ "h0" ] ],
+      [ "pico:GP26", "rgb1:B", "green", [ "h0" ] ],
+      [ "r1:2", "rgb1:COM", "green", [ "v0" ] ],
+      [ "pico:GND.7", "r1:1", "black", [ "h0" ] ],
+      [ "pico:GND.6", "relay1:GND", "black", [ "h87.6", "v-278.4" ] ],
+      [ "pico:GP20", "relay1:IN", "green", [ "h0" ] ]
+    ],
+    "dependencies": {}
+  }
