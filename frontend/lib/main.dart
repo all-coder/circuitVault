@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './screens/auth.dart';
 import './screens/home.dart';
 
 
@@ -10,6 +9,7 @@ void main()
 
 
 class App extends StatelessWidget{
+  const App({super.key});
   @override
   Widget build(BuildContext context)
   {

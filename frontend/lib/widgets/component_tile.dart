@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ionicons/ionicons.dart';
+
 import '../models/component.dart';
 
 class ComponentTile extends StatefulWidget {
@@ -31,21 +34,21 @@ class _ComponentTileState extends State<ComponentTile> {
           ),
           Container(
             margin: const EdgeInsets.fromLTRB(10, 0, 5, 1),
-            child: const Text(
+            child: Text(
               "Raspberry Pi",
-              style: TextStyle(
+              style: GoogleFonts.firaMono(
+                fontSize: 18,
                 color: Colors.white,
-                fontSize: 20,
               ),
             ),
           ),
           Container(
             margin: const EdgeInsets.fromLTRB(10, 0, 5, 3),
-            child: const Text(
+            child: Text(
               "In Stock : 2",
-              style: TextStyle(
-                color: Colors.grey,
+              style: GoogleFonts.firaMono(
                 fontSize: 15,
+                color: const Color(0xffA1A1A1),
               ),
             ),
           ),
@@ -57,34 +60,40 @@ class _ComponentTileState extends State<ComponentTile> {
             child: Stack(
               children: [
                 Positioned(
-                  top: -3,
+                  top: 1,
                   left: 4,
                   child: GestureDetector(
                     child: const Icon(
-                      Icons.minimize,
+                      Ionicons.remove_circle_outline,
                       color: Colors.white,
+                      size: 28,
                     ),
                   ),
                 ),
                 Positioned(
-                  top: 4,
-                  left: (MediaQuery.of(context).size.width / 2 - 70).toDouble(),
+                  top: 1,
+                  left: (MediaQuery.of(context).size.width / 2 - 72).toDouble(),
                   child: GestureDetector(
                     child: const Icon(
-                      Icons.add,
+                      Ionicons.add_circle_outline,
                       color: Colors.white,
+                      size: 28,
                     ),
+                    // child: const Icon(
+                    //   Icons.add,
+                    //   color: Colors.white,
+                    // ),
                   ),
                 ),
                 Positioned(
                   top: 3,
                   left: ((MediaQuery.of(context).size.width / 2 - 50) / 2)
                       .toDouble(),
-                  child: const Text(
+                  child: Text(
                     "2",
-                    style: TextStyle(
+                    style: GoogleFonts.firaMono(
+                      fontSize: 18,
                       color: Colors.white,
-                      fontSize: 20,
                     ),
                   ),
                 )

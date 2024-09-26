@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:frontend/models/component.dart';
 import '../widgets/filters.dart';
 import '../widgets/component_tile.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ionicons/ionicons.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -20,21 +22,21 @@ class Home extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: Stack(
                 children: [
-                  // Left-side menu icon
                   Positioned(
                     left: 10,
                     top: 15,
                     child: Container(
                       height: 50,
                       width: 50,
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.fromLTRB(10, 10, 14, 12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
                         color: const Color(0xff2F2E2E),
                       ),
                       child: const Icon(
-                        Icons.menu,
+                        Ionicons.menu_outline,
                         color: Colors.white,
+                        size: 30,
                       ),
                     ),
                   ),
@@ -46,19 +48,20 @@ class Home extends StatelessWidget {
                       width: 280,
                       child: TextField(
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: GoogleFonts.ubuntuMono(
                           color: Colors.white,
+                          fontSize: 25,
                         ),
                         decoration: InputDecoration(
                           prefixIcon: const Icon(
-                            Icons.search,
+                            Ionicons.search_outline,
                             color: Colors.white,
                             size: 30,
                           ),
                           hintText: "search",
-                          hintStyle: const TextStyle(
+                          hintStyle: GoogleFonts.ubuntuMono(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 25,
                           ),
                           filled: true,
                           fillColor: const Color(0xff2F2E2E),
@@ -72,7 +75,6 @@ class Home extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   Positioned(
                     top: 14,
                     left: (MediaQuery.of(context).size.width - 60).toDouble(),
@@ -101,12 +103,11 @@ class Home extends StatelessWidget {
                               height: 20,
                               width: 20,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Colors.red,
-                              ),
-                              child: const Text(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: const Color(0xffE25353)),
+                              child: Text(
                                 "3",
-                                style: TextStyle(
+                                style: GoogleFonts.firaMono(
                                   color: Colors.white,
                                 ),
                                 textAlign: TextAlign.center,
