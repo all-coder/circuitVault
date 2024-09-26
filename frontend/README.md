@@ -1,11 +1,19 @@
-# circuitVault - frontend/user interface
+# CircuitVault - Frontend/User Interface
 
+## Project Structure
 
-## The entire source code is under the lib folder
+The **lib** folder contains the following sections:
 
-The **lib** folder contains four sections - screens, widgets,models,assets
+- **screens**: This folder contains the various pages you see in the app. Each page is composed of widgets.
+  
+- **widgets**: Reusable components/widgets used across different pages for consistent UI design.
+  
+- **models**: Contains useful abstractions and data models that simplify data handling and logic.
+  
+- **assets**: Includes various static resources such as images, icons, and documents.
 
-screens - contains the pages you view on the flutter app, it consists of widgets. \n
-widgets - consists of widgets which you would use on each individual page \n
-models - useful abstractions \n
-assets - contains anywhere from images to docs \n
+## Status
+
+- **Last Update**: September 26th, 2024
+
+![Project Status](lib/assets/status/status-sept-26.png)
