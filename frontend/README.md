@@ -16,4 +16,4 @@ The **lib** folder contains the following sections:
 
 - **Last Update**: September 26th, 2024
 
-![Project Status](lib/assets/status/status-sept-26.png)
+![alt text](<lib/assets/status/status-sept-26 .png>)
