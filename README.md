@@ -1,4 +1,4 @@
-# Inventory Project
+# circuitVault
 
 ## Description 
 The primary goal of this project is to establish an efficient and robust system for managing Techamanics’s existing component inventory. The project also aims to develop an end-user application, a mobile application to keep the club members updated on components available in the inventory. 
