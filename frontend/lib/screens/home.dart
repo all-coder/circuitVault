@@ -91,9 +91,9 @@ class Home extends StatelessWidget {
                             left: 8,
                             top: 8,
                             child: Icon(
-                              Icons.shopify,
-                              size: 35,
+                              Ionicons.cart_outline,
                               color: Colors.white,
+                              size: 33,
                             ),
                           ),
                           Positioned(
