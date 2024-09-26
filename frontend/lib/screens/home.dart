@@ -25,6 +25,8 @@ class Home extends StatelessWidget {
                     left: 10,
                     top: 15,
                     child: Container(
+                      height: 50,
+                      width: 50,
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
@@ -71,21 +73,40 @@ class Home extends StatelessWidget {
                     ),
                   ),
 
-                  // Right-side menu icon
                   Positioned(
-                    top: 15,
+                    top: 14,
                     left: (MediaQuery.of(context).size.width - 60).toDouble(),
                     child: Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xff2F2E2E),
-                      ),
-                      child: const Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                      ),
-                    ),
+                        height: 50,
+                        width: 50,
+                        //padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: const Color(0xff2F2E2E),
+                        ),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              top: 30.5,
+                              right: 1,
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.red,
+                                ),
+                                child: const Text(
+                                  "3",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
                   ),
                 ],
               ),
