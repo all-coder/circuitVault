@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/models/component.dart';
-import '../widgets/filters.dart';
-import '../widgets/component_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+
+//relative imports
+import '../widgets/filters.dart';
+import '../widgets/component_tile.dart';
+
+//this is the root or the home page of the app
+//this is stateless widget by default
+//where you see sizedBox(), I mainly used them for spacing and relative adjustment of widgets
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,8 +17,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF2E9E4),
-      body: SingleChildScrollView(
-        child: Column(
+      body: Column(
           children: [
             const SizedBox(
               height: 40,
@@ -56,7 +61,7 @@ class Home extends StatelessWidget {
                           prefixIcon: const Icon(
                             Ionicons.search_outline,
                             color: Colors.white,
-                            size: 30,
+                            size: 25,
                           ),
                           hintText: "search",
                           hintStyle: GoogleFonts.ubuntuMono(
@@ -121,35 +126,59 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
+            //this is where the filters go
             const Filter(),
+
             const SizedBox(
               height: 10,
             ),
-            const Row(
-              children: [
-                ComponentTile(
-                  component: Component(
-                      name: "Resistor",
-                      available: 4,
-                      id: 56,
-                      datasheetLink: "nothing",
-                      description: "A resistor is used for resisting current",
-                      imageURL: "nothing here"),
+            // const Row(
+            //   children: [
+            //     ComponentTile(
+            //       component: Component(
+            //           name: "Resistor",
+            //           available: 4,
+            //           id: 56,
+            //           datasheetLink: "nothing",
+            //           description: "A resistor is used for resisting current",
+            //           imageURL: "nothing here"),
+            //     ),
+            //     ComponentTile(
+            //       component: Component(
+            //           name: "Resistor",
+            //           available: 4,
+            //           id: 56,
+            //           datasheetLink: "nothing",
+            //           description: "A resistor is used for resisting current",
+            //           imageURL: "nothing here"),
+            //     ),
+            //   ],
+            // ),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.8, 
                 ),
-                ComponentTile(
-                  component: Component(
-                      name: "Resistor",
-                      available: 4,
-                      id: 56,
-                      datasheetLink: "nothing",
-                      description: "A resistor is used for resisting current",
-                      imageURL: "nothing here"),
-                ),
-              ],
-            ),
+                itemCount: 2, // Total number of items
+                itemBuilder: (context, index) {
+                  return const GridTile(
+                    child: ComponentTile(
+                      component: Component(
+                          name: "Resistor",
+                          available: 4,
+                          id: 56,
+                          datasheetLink: "nothing",
+                          description: "A resistor is used for resisting current",
+                          imageURL: "nothing here"),
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
-      ),
+
     );
   }
 }
