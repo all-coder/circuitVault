@@ -18,7 +18,11 @@ The **lib** folder contains the following sections:
 
 ![alt text](lib/assets/status/update-18th.png)
 
-
 - Fixed Bugs Related to rendering of widgets on screen
 - implemented gridview.builder()
 - implemented dynamic reloading of objects on the home.dart
+
+![alt text](lib/assets/status/update-18th-2.png)
+
+- Created the Component View Widget
+- Few bugs to be sorted out
