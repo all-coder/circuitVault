@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 
+//relative imports
+//importing the Component model
 import '../models/component.dart';
 
+
+//this is the widget reponsible for the tiles you see on the app
+//expects a Component class(component.dart-a useful abstraction)
 class ComponentTile extends StatefulWidget {
   const ComponentTile({required this.component, super.key});
   final Component component;
@@ -20,7 +25,6 @@ class _ComponentTileState extends State<ComponentTile> {
       decoration: const BoxDecoration(color: Color(0xff2F2E2E)),
       margin: const EdgeInsets.fromLTRB(10, 5, 10, 5),
       width: (MediaQuery.of(context).size.width / 2 - 20).toDouble(),
-      height: 250,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,6 +32,11 @@ class _ComponentTileState extends State<ComponentTile> {
             color: Colors.white,
             height: 120,
             margin: const EdgeInsets.fromLTRB(10, 10, 10, 5),
+            child: Image.asset(
+              widget.component.imageURL,
+              alignment:Alignment.center ,
+              fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(
             height: 10,
@@ -35,7 +44,7 @@ class _ComponentTileState extends State<ComponentTile> {
           Container(
             margin: const EdgeInsets.fromLTRB(10, 0, 5, 1),
             child: Text(
-              "Raspberry Pi",
+              widget.component.name,
               style: GoogleFonts.firaMono(
                 fontSize: 18,
                 color: Colors.white,
@@ -45,7 +54,7 @@ class _ComponentTileState extends State<ComponentTile> {
           Container(
             margin: const EdgeInsets.fromLTRB(10, 0, 5, 3),
             child: Text(
-              "In Stock : 2",
+              "In Stock : ${widget.component.available}",
               style: GoogleFonts.firaMono(
                 fontSize: 15,
                 color: const Color(0xffA1A1A1),
