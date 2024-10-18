@@ -14,6 +14,11 @@ The **lib** folder contains the following sections:
 
 ## Status
 
-- **Last Update**: September 26th, 2024
+- **Last Update**: October 18th 2024
 
-![alt text](<lib/assets/status/status-sept-26 .png>)
+![alt text](lib/assets/status/update-18th.png)
+
+
+- Fixed Bugs Related to rendering of widgets on screen
+- implemented gridview.builder()
+- implemented dynamic reloading of objects on the home.dart
